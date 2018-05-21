@@ -52,6 +52,7 @@ class Tumblr_Gdpr extends Plugin {
 			"gdpr_is_acceptable_age" => "False",
 			"redirect_to" => $url);
 
+		curl_setopt($curl_handle, CURLOPT_IPRESOLVE,  CURL_IPRESOLVE_V4);
 		curl_setopt($curl_handle, CURLOPT_URL, "https://www.tumblr.com/svc/privacy/consent");
 		curl_setopt($curl_handle, CURLOPT_POST, true);
 		curl_setopt($curl_handle, CURLOPT_POSTFIELDS, http_build_query($data));
